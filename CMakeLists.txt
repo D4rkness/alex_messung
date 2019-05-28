@@ -12,14 +12,17 @@ find_package(Qt5 COMPONENTS REQUIRED Core Gui Widgets)
 # file from the qt5_wrap_ui call below.
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-set(project_sources src/ui/mainscreen/mainwindow.cpp
+set(project_sources src/view/mainscreen/mainwindow.cpp
         src/main.cpp
-        src/controller_model/MeasurePoint.cpp src/controller_model/Measure.cpp src/controller_model/Measure.h)
+        src/model/MeasurePoint.cpp
+        src/model/Measure.cpp
+        src/model/DataModel.cpp
+        src/controller/Controller.cpp)
 
-set(project_headers src/ui/mainscreen/mainwindow.h src/controller_model/DataModel.cpp src/controller_model/DataModel.h)
+set(project_headers src/view/mainscreen/mainwindow.h src/tools/DataTools.h)
 
-set(project_ui src/ui/mainscreen/main_screen.ui)
-# wrap the ui file to a c++ header
+set(project_ui src/view/mainscreen/main_screen.ui)
+# wrap the view file to a c++ header
 qt5_wrap_ui(ui_wrap ${project_ui})
 qt5_wrap_cpp(moc_sources ${project_headers})
 add_executable(alex_messung

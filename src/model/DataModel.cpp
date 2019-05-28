@@ -10,7 +10,6 @@ DataModel::DataModel() {
     selectedMeasureType = RadioButtonTypes::MeasureType::A;
     selectedFormType = RadioButtonTypes::FormType::RECTANGULAR;
     measureDataContainer = std::vector<Measure>();
-    rawDataBufferContainer = std::vector<MeasurePoint>();
 }
 
 const std::string &DataModel::getInputPath() const {
@@ -43,4 +42,16 @@ RadioButtonTypes::FormType DataModel::getSelectedFormType() const {
 
 void DataModel::setSelectedFormType(RadioButtonTypes::FormType selectedFormType) {
     DataModel::selectedFormType = selectedFormType;
+}
+
+void DataModel::computeCircle(double diameter, double height) {
+
+}
+
+void DataModel::computeRectangle(double length, double width, double height, double extra) {
+
+}
+
+void DataModel::loadDataFromFile() {
+
 }

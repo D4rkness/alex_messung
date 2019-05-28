@@ -120,8 +120,14 @@
               <property name="enabled">
                <bool>true</bool>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
               <property name="readOnly">
                <bool>true</bool>
+              </property>
+              <property name="placeholderText">
+               <string/>
               </property>
              </widget>
             </item>
@@ -161,6 +167,9 @@
             </item>
             <item>
              <widget class="QLineEdit" name="leOutputPath">
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
               <property name="readOnly">
                <bool>true</bool>
               </property>
@@ -238,6 +247,9 @@
                   <height>16777215</height>
                  </size>
                 </property>
+                <property name="placeholderText">
+                 <string>in mm</string>
+                </property>
                </widget>
               </item>
               <item row="2" column="0">
@@ -254,6 +266,9 @@
                   <width>200</width>
                   <height>16777215</height>
                  </size>
+                </property>
+                <property name="placeholderText">
+                 <string>in mm</string>
                 </property>
                </widget>
               </item>
@@ -272,6 +287,9 @@
                   <height>16777215</height>
                  </size>
                 </property>
+                <property name="placeholderText">
+                 <string>in mm</string>
+                </property>
                </widget>
               </item>
               <item row="4" column="0">
@@ -288,6 +306,9 @@
                   <width>200</width>
                   <height>16777215</height>
                  </size>
+                </property>
+                <property name="placeholderText">
+                 <string>in mm</string>
                 </property>
                </widget>
               </item>
@@ -431,18 +452,6 @@
     <addaction name="actionEnable_Disable_Fast_Complete"/>
    </widget>
    <addaction name="menuSettings"/>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <action name="actionEnable_Disable_Fast_Complete">
    <property name="text">

@@ -18,4 +18,13 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+private slots:
+    void selectInputPath();
+    void selectOutputPath();
+    void loadData();
+    void computeLoadedData();
+    void exportData();
+    void quickExport();
+
 };
