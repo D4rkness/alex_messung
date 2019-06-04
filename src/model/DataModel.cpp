@@ -3,13 +3,16 @@
 //
 
 #include "DataModel.h"
+#include "src/tools/DataTools.h"
 
-DataModel::DataModel() {
+DataModel::DataModel(ModelMessageHandler& messageHandler) {
     inputPath = "";
     outputPath = "";
     selectedMeasureType = RadioButtonTypes::MeasureType::A;
     selectedFormType = RadioButtonTypes::FormType::RECTANGULAR;
     measureDataContainer = std::vector<Measure>();
+    this->messageHandler = &messageHandler;
+
 }
 
 const std::string &DataModel::getInputPath() const {
@@ -45,13 +48,15 @@ void DataModel::setSelectedFormType(RadioButtonTypes::FormType selectedFormType)
 }
 
 void DataModel::computeCircle(double diameter, double height) {
-
+    Datacomputation::compute_circle();
 }
 
 void DataModel::computeRectangle(double length, double width, double height, double extra) {
-
+    Datacomputation::computer_rectangle();
 }
 
 void DataModel::loadDataFromFile() {
-
+    std::vector<Measure> dirtyContainer = std::vector<Measure>();
+    DataLoader::loadFileToRawDataBuffer(inputPath, dirtyContainer, messageHandler);
+    DataCleaner::removeTransitionValues(dirtyContainer, measureDataContainer, messageHandler);
 }

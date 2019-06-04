@@ -41,4 +41,8 @@ void Measure::clearAll() {
     maxSections = 0;
 }
 
+const std::map<int, std::vector<MeasurePoint>> *Measure::getAllSections() {
+    return &sectionContainer;
+}
+
 

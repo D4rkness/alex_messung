@@ -399,7 +399,7 @@
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_10" stretch="0,0,0,0">
+       <layout class="QVBoxLayout" name="verticalLayout_10" stretch="0,0,0,0,0">
         <property name="spacing">
          <number>6</number>
         </property>
@@ -417,6 +417,13 @@
          <widget class="QPushButton" name="btnExportData">
           <property name="text">
            <string>Export Data</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnResetAll">
+          <property name="text">
+           <string>Reset All</string>
           </property>
          </widget>
         </item>

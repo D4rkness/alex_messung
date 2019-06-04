@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "Measure.h"
+#include "ModelMessageHandler.h"
 
 namespace RadioButtonTypes{
     enum MeasureType {
@@ -13,7 +14,8 @@ namespace RadioButtonTypes{
     };
 }
 
-class DataModel {
+class DataModel{
+
 
 
 private:
@@ -24,9 +26,11 @@ private:
 
     std::vector<Measure> measureDataContainer;
 
+    ModelMessageHandler* messageHandler;
+
 public:
 
-    DataModel();
+    DataModel(ModelMessageHandler& messageHandler);
 
     const std::string &getInputPath() const;
     RadioButtonTypes::FormType getSelectedFormType() const;
@@ -42,6 +46,7 @@ public:
 
     void computeRectangle(double length, double width, double height, double extra);;
     void computeCircle(double diameter, double height);
+
 
 };
 

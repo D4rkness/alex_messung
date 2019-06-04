@@ -8,6 +8,10 @@ set(CMAKE_PREFIX_PATH "/usr/lib/x86_64-linux-gnu/cmake")
 
 
 find_package(Qt5 COMPONENTS REQUIRED Core Gui Widgets)
+include_directories(/usr/local/include)
+link_directories(/usr/local/lib)
+
+#find_package(Xlnt)
 # need this to include the auto generated ui_mainwindow.h
 # file from the qt5_wrap_ui call below.
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -17,14 +21,19 @@ set(project_sources src/view/mainscreen/mainwindow.cpp
         src/model/MeasurePoint.cpp
         src/model/Measure.cpp
         src/model/DataModel.cpp
-        src/controller/Controller.cpp)
+        src/controller/Controller.cpp
+        src/model/ModelMessageHandler.cpp
+        )
 
-set(project_headers src/view/mainscreen/mainwindow.h src/tools/DataTools.h)
+set(project_headers src/view/mainscreen/mainwindow.h
+        src/tools/DataTools.h
+        src/model/ModelMessageHandler.h )
 
 set(project_ui src/view/mainscreen/main_screen.ui)
 # wrap the view file to a c++ header
 qt5_wrap_ui(ui_wrap ${project_ui})
 qt5_wrap_cpp(moc_sources ${project_headers})
+
 add_executable(alex_messung
         ${project_sources}
         ${project_headers}
@@ -35,4 +44,5 @@ target_link_libraries(alex_messung
         PUBLIC
         Qt5::Core
         Qt5::Gui
-        Qt5::Widgets)
+        Qt5::Widgets
+        libxlnt.so)
