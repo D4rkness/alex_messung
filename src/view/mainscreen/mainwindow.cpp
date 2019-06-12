@@ -28,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent, ModelMessageHandler& modelMessageHandler
     connect(&modelMessageHandler, SIGNAL(finish_DataCleaning()), this, SLOT(finish_data_cleaning()));
 
     ui->btnQuickExport->setVisible(false);
+
 }
 
 MainWindow::~MainWindow()

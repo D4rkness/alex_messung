@@ -15,11 +15,14 @@ namespace DataCleaner{
 
     int running_midle_range = 4;
     int running_midle_max_deviation = 3;
+    std::vector<int> middle_container = std::vector<int>();
 
     void removeTransitionValues(std::vector<Measure> &dirtyContainer, std::vector<Measure> &cleanContainer, ModelMessageHandler *messageHandler ){
         messageHandler->start_Datacleaning();
-        for(Measure measureElement : dirtyContainer){
+        for(Measure &measure : dirtyContainer){
+            for(const auto& section: *measure.getAllSections()){
 
+            }
         }
 
         messageHandler->finish_DataCleaning();
